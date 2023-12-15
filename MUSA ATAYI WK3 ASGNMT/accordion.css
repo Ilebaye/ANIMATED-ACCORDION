@@ -1,0 +1,37 @@
+.accordion{
+    background-color: gainsboro;
+    color: black;
+    cursor: pointer;
+    width: 100%;
+    padding: 18px;
+    text-align: justify;
+    border: none;
+    outline: none;
+    transition: 0.5s;
+}
+.active, .accordion-body:hover{
+    background-color: blue;
+}
+
+.accordion-body:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+
+  .active:after {
+    content: "\2212";
+  }
+
+.accordion{
+    padding: 0.20px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+
+  
+  

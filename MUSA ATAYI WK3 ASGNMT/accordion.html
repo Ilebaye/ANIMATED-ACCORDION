@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+</style>
+</head>
+<body>
+
+<h2>Frequently Asked Questions</h2>
+
+<button class="accordion">Does my site need to be updated to HTTPS instead of HTTP?</button>
+<div class="panel">
+  <p>Yes!
+    In 2018, there is no reason – no good excuse – not to upgrade any site to HTTPS 
+    by acquiring an SSL certificate. Starting in August 2018, the most popular web 
+    browser on the planet, Google Chrome, will give a big red warning to your visitors 
+    if your site is not fully secure. Firefox is already doing this, and Microsoft’s 
+    Edge and Apple’s Safari are sure to follow. So make sure you get an SSL certificate 
+    and keep it up to date. This will protect your content from being covertly altered 
+    and prevent your customers’ information from being monitored or stolen.</div>
+
+<button class="accordion">How long does a website redesign take?</button>
+<div class="panel">
+  <p>Depending on the size, complexity and, most critically, the client’s 
+    active involvement in the process, a website takes anywhere between six and 24 weeks to build 
+    and launch. Some incredibly large projects have broken the year mark.</div>
+
+<button class="accordion">What happens if my site breaks?</button>
+<div class="panel">
+  <p>We’re always here to help! We can cover emergencies and non-emergencies alike. 
+    Just be sure to give us as many details as possible about the problem: the browser you were using 
+    when you noticed the problem, your computer’s operating system, time of day, what actions you were 
+    performing, what device you were using when you saw the problem, etc.</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</body>
+</html>
